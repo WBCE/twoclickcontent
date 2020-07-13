@@ -57,7 +57,7 @@ if(count(get_included_files()) ==1){$z="HTTP/1.0 404 Not Found";header($z);die($
     }
     else {
       jQuery("#mod_twoclickcontent_opt-in<?php echo $section_id;?> .mod_twoclickcontent_button").click(function() {
-        Cookies.set("tcConsent<?php echo $section_id; ?>", "1", { expires: 28 });
+        Cookies.set("tcConsent<?php echo $section_id; ?>", "1", { expires: 28, SameSite:'Lax' });
         jQuery("#mod_twoclickcontent_opt-in<?php echo $section_id;?>").hide();
         jQuery("#mod_twoclickcontent_opt-in<?php echo $section_id;?>").after('<?php echo $content; ?>');
       });
